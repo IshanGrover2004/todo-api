@@ -7,6 +7,7 @@ use uuid::Uuid;
 
 pub mod error;
 pub mod handler;
+pub mod server;
 
 pub type AppState = Arc<Mutex<HashMap<Uuid, User>>>;
 
