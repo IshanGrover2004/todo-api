@@ -8,6 +8,8 @@ use uuid::Uuid;
 pub mod error;
 pub mod handler;
 pub mod server;
+#[cfg(test)]
+pub mod test;
 
 pub type AppState = Arc<Mutex<HashMap<Uuid, User>>>;
 
@@ -27,7 +29,7 @@ pub struct Task {
     status: TaskStatus,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub enum TaskStatus {
     Todo,
     InProgress,
